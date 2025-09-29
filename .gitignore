@@ -1,0 +1,7 @@
+.idea
+cmake-build-debug
+CMakeLists.txt
+temp.cpp
+test.txt
+output.txt
+expected.txt
