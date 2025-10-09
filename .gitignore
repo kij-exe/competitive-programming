@@ -7,3 +7,5 @@ output.txt
 expected.txt
 input.txt
 main
+build
+.cache
