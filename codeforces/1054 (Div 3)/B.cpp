@@ -29,7 +29,16 @@ ll add(ll a, ll b) {
 }
 
 void solve() {
-
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int& x: a) cin >> x;
+    ranges::sort(a);
+    int maxDiff = 0;
+    for (int i = 0; i < n; i += 2) {
+        maxDiff = max(maxDiff, a[i+1] - a[i]);
+    }
+    cout << maxDiff << endl;
 }
 
 int main() {
@@ -37,7 +46,7 @@ int main() {
     cin.tie(nullptr);
 
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
+    freopen("../input.txt", "r", stdin);
 //    freopen("output.txt", "w", stdout);
 #endif
 

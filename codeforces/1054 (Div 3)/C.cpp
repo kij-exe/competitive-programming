@@ -29,7 +29,23 @@ ll add(ll a, ll b) {
 }
 
 void solve() {
-
+    int n, k;
+    cin >> n >> k;
+    vector<bool> found(k, false);
+    int foundCnt = 0;
+    int kValues = 0;
+    for (int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        if (x < k && !found[x]) {
+            found[x] = true;
+            foundCnt++;
+        }
+        else if (x == k) {
+            kValues++;
+        }
+    }
+    cout << max(kValues, k - foundCnt) << endl;
 }
 
 int main() {
@@ -37,7 +53,7 @@ int main() {
     cin.tie(nullptr);
 
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
+    freopen("../input.txt", "r", stdin);
 //    freopen("output.txt", "w", stdout);
 #endif
 
