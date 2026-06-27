@@ -1,3 +1,6 @@
+//
+// Created by Mykyta on 10/8/2025.
+//
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,7 +10,9 @@ using ll = long long;
 template<typename T> ostream& operator<<(ostream& out, vector<T>& a) {for(auto &x : a) out << x << ' '; return out;};
 
 void solve() {
-
+    int n;
+    cin >> n;
+    cout << (3 - n % 3) % 3 << endl;
 }
 
 int main() {
