@@ -30,24 +30,13 @@ ll add(ll a, ll b) {
 }
 
 void solve() {
-    int a, b, x;
-    cin >> a >> b >> x;
-    int steps = abs(a - b);
-    int count = 0;
-    while (a != 1 || b != 1) {
-        if (a > b) {
-            a /= x;
-        }
-        else if (b > a) {
-            b /= x;
-        }
-        else {
-            break;
-        }
-        count++;
-        steps = min(steps, count + abs(a - b));
+    int n;
+    cin >> n;
+    vector<ll> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
-    cout << steps << endl;
+    printf("%lld\n", ranges::max(a) - ranges::min(a) + 1);
 }
 
 int main() {

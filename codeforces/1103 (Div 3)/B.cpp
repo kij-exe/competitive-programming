@@ -30,24 +30,25 @@ ll add(ll a, ll b) {
 }
 
 void solve() {
-    int a, b, x;
-    cin >> a >> b >> x;
-    int steps = abs(a - b);
-    int count = 0;
-    while (a != 1 || b != 1) {
-        if (a > b) {
-            a /= x;
-        }
-        else if (b > a) {
-            b /= x;
-        }
-        else {
-            break;
-        }
-        count++;
-        steps = min(steps, count + abs(a - b));
+    int n, k;
+    cin >> n >> k;
+    vector<char> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
-    cout << steps << endl;
+    for (int i = 0; i < k; i++) {
+        int j = i;
+        int count = 0;
+        while (j < n) {
+            if (a[j] == '1') count++;
+            j += k;
+        }
+        if (count % 2 == 1) {
+            cout << "NO" << endl;
+            return;
+        }
+    }
+    cout << "YES" << endl;
 }
 
 int main() {
